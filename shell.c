@@ -15,7 +15,7 @@ int main(int argc, char **argv, char **env)
 	char **array;
 	size_t n = 0;
 	ssize_t nread;
-	int i;
+	int i = argc;
 
 	while (1)
 	{
@@ -40,6 +40,5 @@ int main(int argc, char **argv, char **env)
 		_free_array(array);
 		free(str);
 	}
-	free(str);
 	return (0);
 }
