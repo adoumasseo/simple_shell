@@ -18,5 +18,5 @@ char *_strchr(char *str, char delim);
 int _word_count(char *str, char delim);
 void _free_array_i(char **array, int j);
 void _free_array(char **array);
-void exeve(char **array, char **env, char *argv);
+void exeve(char **array, char **env, char *argv, int count);
 #endif

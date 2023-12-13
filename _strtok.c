@@ -16,34 +16,24 @@ char **_strtok(char *str, char *delim)
 
 	while (str[i] != '\0' && _strchr(delim, str[i]) != NULL)
 		i++;
-	word = malloc(sizeof(char *));
-	if (word == NULL)
-		return (NULL);
 	copy = _strcopy(str);
 	if (copy == NULL)
 		return (NULL);
 	token = strtok(copy, delim);
-	while (token != NULL)
+	word = malloc((j + 2) * sizeof(char *));
+	if (word == NULL)
 	{
-		word = realloc(word, (j + 2) * sizeof(char *));
-		if (word == NULL)
-		{
-			free(copy);
-			free(token);
-			_free_array_i(word, j);
-			return (NULL);
-		}
-		word[j] = _strcopy(token);
-		if (word[j] == NULL)
-		{
-			free(copy);
-			free(token);
-			_free_array_i(word, j);
-			return (NULL);
-		}
-		j++;
-		token = strtok(NULL, delim);
+		free(copy);
+		return (NULL);
 	}
+	word[j] = _strcopy(token);
+	if (word[j] == NULL)
+	{
+		free(copy);
+		_free_array_i(word, j);
+		return (NULL);
+	}
+	j++;
 	word[j] = NULL;
 	free(copy);
 	return (word);

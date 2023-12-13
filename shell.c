@@ -15,7 +15,7 @@ int main(int argc, char **argv, char **env)
 	char **array;
 	size_t n = 0;
 	ssize_t nread;
-	int i = argc;
+	int i = argc, count;
 
 	while (1)
 	{
@@ -25,6 +25,7 @@ int main(int argc, char **argv, char **env)
 		if (nread == EOF)
 			break;
 		str = _strchrg(str, '\n');
+		count = _word_count(str, ' ');
 		i = _strlen(str);
 		if (i <= 1)
 		{
@@ -36,7 +37,7 @@ int main(int argc, char **argv, char **env)
 			free(str);
 			continue;
 		}
-		exeve(array, env, argv[0]);
+		exeve(array, env, argv[0], count);
 		_free_array(array);
 		free(str);
 	}
