@@ -24,4 +24,5 @@ int _strcmp(char *str1, char *str2);
 char *_getenv(char *name, char **env, char **tmp);
 char *string_nconcat(char *s1, char *s2);
 int _search_file(char *file_name, char **env);
+char *_search_file_str(char *file_name, char **env);
 #endif

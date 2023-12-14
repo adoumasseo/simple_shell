@@ -28,6 +28,7 @@ void exeve(char **array, char **env, char *argv)
 	struct stat st;
 	pid_t child_pid, err_exeve;
 	int status;
+	char *p;
 
 	if (stat(array[0], &st) == 0)
 	{
@@ -46,10 +47,14 @@ void exeve(char **array, char **env, char *argv)
 		child_pid = fork();
 		if (child_pid == 0)
 		{
-			err_exeve = execve(array[0], array, env);
+			p = _search_file_str(array[0], env);
+			err_exeve = execve(p, array, env);
+			free(p);
 			if (err_exeve == -1)
 				perror("execve");
 		}
+		else
+			wait(&status);
 	}
 	else
 	{
