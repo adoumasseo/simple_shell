@@ -63,6 +63,7 @@ int _search_file(char *file_name, char **env)
 			free(tmp);
 			return (1);
 		}
+		free(file_path);
 		token = strtok(NULL, ":");
 	}
 	free(file_path);
@@ -103,6 +104,7 @@ char *_search_file_str(char *file_name, char **env)
 			free(tmp);
 			return (file_path);
 		}
+		free(file_path);
 		token = strtok(NULL, ":");
 	}
 	free(file_path);

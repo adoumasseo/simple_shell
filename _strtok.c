@@ -30,7 +30,7 @@ char **_strtok(char *str, char *delim)
 		{
 			free(copy);
 			free(token);
-			_free_array_i(word, j);
+			_free_array(word);
 			return (NULL);
 		}
 		word[j] = _strcopy(token);
@@ -38,7 +38,7 @@ char **_strtok(char *str, char *delim)
 		{
 			free(copy);
 			free(token);
-			_free_array_i(word, j);
+			_free_array(word);
 			return (NULL);
 		}
 		j++;
