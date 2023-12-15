@@ -37,6 +37,8 @@ int main(int argc, char **argv, char **env)
 			free(str);
 			continue;
 		}
+		if (_strcmp(array[0], "exit") == 0)
+			return (0);
 		exeve(array, env, argv[0]);
 		_free_array(array);
 	}
