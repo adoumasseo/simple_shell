@@ -60,6 +60,7 @@ int _search_file(char *file_name, char **env)
 			free(file_path);
 			free(_file_name_slash);
 			free(path);
+			free(tmp);
 			return (1);
 		}
 		token = strtok(NULL, ":");
@@ -67,6 +68,7 @@ int _search_file(char *file_name, char **env)
 	free(file_path);
 	free(_file_name_slash);
 	free(path);
+	free(tmp);
 	return (0);
 }
 /**
@@ -98,6 +100,7 @@ char *_search_file_str(char *file_name, char **env)
 		{
 			free(_file_name_slash);
 			free(path);
+			free(tmp);
 			return (file_path);
 		}
 		token = strtok(NULL, ":");
@@ -105,5 +108,6 @@ char *_search_file_str(char *file_name, char **env)
 	free(file_path);
 	free(_file_name_slash);
 	free(path);
+	free(tmp);
 	return (NULL);
 }

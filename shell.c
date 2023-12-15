@@ -25,6 +25,7 @@ int main(int argc, char **argv, char **env)
 		if (nread == EOF)
 			break;
 		str = _strchrg(str, '\n');
+		_str_chg_into(str);
 		i = _strlen(str);
 		if (i <= 1)
 		{
