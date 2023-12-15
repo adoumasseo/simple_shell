@@ -39,8 +39,6 @@ int main(int argc, char **argv, char **env)
 		}
 		if (_strcmp(array[0], "exit") == 0)
 		{
-			write(1, array[0], _strlen(array[0]));
-			write(1, "\n", 1);
 			free(str);
 			_free_array(array);
 			_exit(0);

@@ -9,6 +9,7 @@
 #include <string.h>
 #include <errno.h>
 #include <sys/stat.h>
+#include <signal.h>
 
 char *_strcopy(char *str);
 char **_strtok(char *str, char *delim);
@@ -26,4 +27,5 @@ char *string_nconcat(char *s1, char *s2);
 int _search_file(char *file_name, char **env);
 char *_search_file_str(char *file_name, char **env);
 void _str_chg_into(char *str);
+void sigint_handler(int sig_num);
 #endif

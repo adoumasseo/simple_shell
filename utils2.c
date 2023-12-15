@@ -63,4 +63,5 @@ void exeve(char **array, char **env, char *argv)
 		write(1, array[0], _strlen(array[0]));
 		write(1, ": not found\n", _strlen(": not found\n"));
 	}
+
 }
