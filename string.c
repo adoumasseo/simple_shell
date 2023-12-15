@@ -54,7 +54,7 @@ void _str_chg_into(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == '\t' || str[i] == '$')
+		if (str[i] == '\t')
 			str[i] = ' ';
 	}
 }
