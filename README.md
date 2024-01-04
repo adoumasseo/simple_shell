@@ -9,5 +9,5 @@ This repository contains my own version of basic shell implemented in C and it t
 
 ## Example 
 Normally the output should be something like this 
-![Shell_texting]()
+![Shell_texting](https://github.com/adoumasseo/simple_shell/blob/main/img.png)
 
